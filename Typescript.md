@@ -1,1 +1,104 @@
-# First Step
+# Typescripts basics
+
+## Variables
+
+### Types of variable declaration
+
+```JS
+let isNew: boolean;
+let sum: number;
+let firstname: string;
+ We can define but less use of this
+let work: null;
+let property: undefined;
+ only we can parse the appropriate value
+isNew = false;
+sum = 75;
+firstname = "Chitralekha";
+work = null;
+ else we will get compile time error
+ firstname = false;  invalid
+ property = "SomeName"  invalid
+```
+
+- [!NOTE]
+- [Here in editor we get help type appropriate methods to do]
+
+firstname.charAt(2);
+firstname.concat("Sahu");
+
+### Work with others like array & tuples
+
+```Javascript
+let fruits: string[] = ["Orange", "Apple"];
+let sumSec: Array<number> = [1, 3, 4, 6];
+
+let person: [string, number] = ["Rajesh", 30];
+```
+
+### Work with enum
+
+```Typescript
+enum Colors {
+  Red,
+  Green,
+  Black = 240,
+  White,
+  Yellow,
+}
+
+let w: Colors = Colors.White;
+console.log(w);
+```
+
+- [!NOTE]
+- [Here at enum initial index starts from zero or we can provide custom values as well, After that goes increment order]
+
+### Work with any and unknown
+
+```TS
+
+let myVariable: any = 10;  as number
+myVariable = "Rajesh Gupta";  as string
+myVariable = false;  as boolean
+ console.log(myVariable.name);  as object
+ myVariable();  as function
+ myVariable.toUpperCase();  can use method asuming as string
+
+```
+
+- [!NOTE]
+- [Here we won't get any compile time error but in runtime acxures to resolve this issue folow below]
+
+```TS
+let yourVariable: unknown = "Sahid";
+
+console.log(yourVariable.name);  invalid
+yourVariable();  invalid
+(yourVariable as string).toUpperCase();  valid
+console.log(yourVariable);
+```
+
+### Union types and default type
+
+```TS
+let x;
+x = false;
+x = "Some String";
+x = 8001;
+ It doesn't show any error because x by default takes as any to restrict
+let y = 10;
+ y = false;  invalid
+ y = "Suresh ";  invalid
+```
+
+- [!NOTE]
+- [Here If we provide the initial value TS understand the value and provide the intelisence]
+
+```TS
+let multiType: number | boolean;
+
+multiType = 10;
+multiType = false;
+
+```
