@@ -102,3 +102,56 @@ multiType = 10;
 multiType = false;
 
 ```
+### Functions
+> Normal Function
+```Typescript
+export {};
+
+function add(num1: number, num2: string) {
+  return num1 + num2;
+}
+ //Here we can specify the return type
+function sub(num1: number, num2: number): number {
+  return num1 - num2;
+}
+const sum = add(10, "Hari");
+```
+
+> Optional Function
+
+```Typescript
+
+function mul(num1: number, num2?: number): number {
+  if (num2) {
+    return num1 * num2;
+  } else {
+    return num1;
+  }
+}
+
+mul(10, 20);
+mul(10);
+```
+
+ > [!NOTE]
+ > Optional params we can define n number of params
+
+ > [!INFO]
+ > Optional params is always after the required params
+
+> Default Value Function
+
+```Typescript
+
+function calc(num1: number, num2: number = 5): number {
+  if (num2) {
+    return num1 * num2;
+  } else {
+    return num1;
+  }
+}
+
+let value = calc(10, 20);
+let value2 = calc(10);
+console.log(value2);
+```
