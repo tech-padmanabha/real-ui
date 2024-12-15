@@ -136,7 +136,7 @@ mul(10);
  > [!NOTE]
  > Optional params we can define n number of params
 
- > [!INFO]
+ > [!IMPORTANT]
  > Optional params is always after the required params
 
 > Default Value Function
@@ -155,3 +155,83 @@ let value = calc(10, 20);
 let value2 = calc(10);
 console.log(value2);
 ```
+### Interface
+> Represent Object
+```Typescript
+export {};
+
+ function getPerson(person: { firstName: string; lastName: string }) {
+   console.log(`${person.firstName} ${person.lastName}`);
+ }
+ let p = {
+   firstName: "Harish",
+   lastName: "Jain",
+   address: "Bang",
+   dob: "12-Mar-2000",
+ };
+ let details = getPerson(p);
+
+```
+
+ > [!CAUTION]
+ > Here we will not get any error. Address and dob are uselesee to pass
+
+> By Using Interface we can restrict
+
+```Typescript
+
+interface Person {
+  firstName: string;
+  lastName?: string;
+}
+
+function getPerson(person: Person) {
+  console.log(`${person.firstName} ${person.lastName}`);
+}
+let p = {
+  firstName: "Harish",
+  lastName: "Jain",
+  address: "Bang",
+  dob: "12-Mar-2000",
+};
+let details = getPerson(p);
+```
+
+### Class & modifier
+> Represent Object
+```Typescript
+class Parent {
+  protected firstname: string;
+  protected lastname: string;
+
+  constructor(fName: string, lName: string) {
+    this.firstname = fName;
+    this.lastname = lName;
+  }
+
+  getLastName() {
+    console.log(this.lastname + " is you identity");
+  }
+}
+
+class Child extends Parent {
+  constructor(fName: string, lName: string) {
+    super(fName, lName);
+  }
+
+  greet() {
+    console.log(this.lastname);
+  }
+}
+
+let person = new Parent("Padmanabha", "Sahu");
+person.getLastName();
+console.log(person.firstname, person.lastname);
+
+let child = new Child("Chitralekhs", "Sahu");
+child.getLastName();
+console.log(child.firstname, child.lastname);
+```
+ > [!CAUTION]
+ > Here we will get error firstname or lastname we can't access outside parent clild releationship. Here if we change the modifier to private then clild classes can not access as well. By default is public.
+
