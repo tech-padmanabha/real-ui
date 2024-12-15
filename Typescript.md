@@ -4,7 +4,7 @@
 
 ### Types of variable declaration
 
-```JS
+```Typescript
 let isNew: boolean;
 let sum: number;
 let firstname: string;
@@ -22,14 +22,14 @@ work = null;
 ```
 
 - [!NOTE]
-- [Here in editor we get help type appropriate methods to do]
+- Here in editor we get help type appropriate methods to do
 
 firstname.charAt(2);
 firstname.concat("Sahu");
 
 ### Work with others like array & tuples
 
-```Javascript
+```Typescript
 let fruits: string[] = ["Orange", "Apple"];
 let sumSec: Array<number> = [1, 3, 4, 6];
 
@@ -52,11 +52,11 @@ console.log(w);
 ```
 
 - [!NOTE]
-- [Here at enum initial index starts from zero or we can provide custom values as well, After that goes increment order]
+- Here at enum initial index starts from zero or we can provide custom values as well, After that goes increment order
 
 ### Work with any and unknown
 
-```TS
+```Typescript
 
 let myVariable: any = 10;  as number
 myVariable = "Rajesh Gupta";  as string
@@ -68,9 +68,9 @@ myVariable = false;  as boolean
 ```
 
 - [!NOTE]
-- [Here we won't get any compile time error but in runtime acxures to resolve this issue folow below]
+- Here we won't get any compile time error but in runtime acxures to resolve this issue folow below
 
-```TS
+```Typescript
 let yourVariable: unknown = "Sahid";
 
 console.log(yourVariable.name);  invalid
@@ -81,7 +81,7 @@ console.log(yourVariable);
 
 ### Union types and default type
 
-```TS
+```Typescript
 let x;
 x = false;
 x = "Some String";
@@ -93,9 +93,9 @@ let y = 10;
 ```
 
 - [!NOTE]
-- [Here If we provide the initial value TS understand the value and provide the intelisence]
+- Here If we provide the initial value TS understand the value and provide the intelisence
 
-```TS
+```Typescript
 let multiType: number | boolean;
 
 multiType = 10;
